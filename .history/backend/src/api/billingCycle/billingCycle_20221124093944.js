@@ -21,6 +21,6 @@ const billingClyceSchema = mongoose.Schema({
     debts: [debtSchema] 
 })
 
-module.exports = restful.model('BillingCycle', billingClyceSchema)
+module.exports = restful.model('BillingCycle', BillingCycles)
 
 
