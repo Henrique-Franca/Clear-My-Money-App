@@ -5,7 +5,7 @@ import Header from '../common/tamplate/header';
 
 export default props=>(
     <div className="wrapper">
-        <Header/>
+        <h1>App</h1>
     </div>
 )
 
