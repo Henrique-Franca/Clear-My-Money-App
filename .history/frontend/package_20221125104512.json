@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev":"webpack-dev-server --progress --color --inline --hot",
-    "production" : "webpack --progress -p"
+    "production" : ""
   },
   "keywords": [],
   "author": "",
