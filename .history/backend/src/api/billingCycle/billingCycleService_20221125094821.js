@@ -8,15 +8,15 @@ BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('get', (req, res, next) => {
 
-    BillingCycle.find({}, (error, docs) => {
+    BillingCycle.find({}, (err, docs) => {
 
-        if(!error) {
+        if(!err) {
 
             res.json(docs)
 
         } else {
 
-            res.status(500).json({errors: [error]})
+            res.status(500).json({errors: [err]})
 
         }
 
