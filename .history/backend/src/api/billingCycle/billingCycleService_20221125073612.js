@@ -24,8 +24,6 @@ BillingCycle.route('summary', (req, res, next)=>{
     },(error,result)=>{
         if(error){
             res.status(500).json({errors:[error]})
-        }else {
-            res.json(result[0] || {credit:0, debt:0})
         }
     })
 })
