@@ -1,4 +1,4 @@
-import '../common/tamplate/denpendencies'
+//import '../common/tamplate/denpendencies'
 import React from "react";
 
 export default props=>(
