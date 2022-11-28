@@ -7,15 +7,11 @@ class Dashboard extends Component{
     render(){
         return(
             <div>
-                <ContentHeader title='Dashboard' small='Versão 1.0'/>
-                <Content>
-                    Dashboard
-                </Content>
+                <ContentHeader title='Dashboard' small='Versão 1.0'></ContentHeader>
             </div>
         )
     }
 
 }
 
-export default Dashboard
 
