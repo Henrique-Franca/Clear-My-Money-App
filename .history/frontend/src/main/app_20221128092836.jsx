@@ -11,7 +11,7 @@ export default props=>(
         <Header/>
         <SideBar/>
         <div className="content-wrapper">
-            {props.children}
+            <h1>Conteudo</h1>
         </div>
         <Footer/>
     </div>
