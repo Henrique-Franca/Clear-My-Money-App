@@ -1,14 +1,14 @@
-import '../common/template/denpendencies'
+//import '../common/template/dependencies'
 import React from 'react'
 
-import Header from '../common/template/header'
+ import Header from '../common/template/header'
 import Sidebar from '../common/template/sidebar'
-import Footer from '../common/template/footer'
+ import Footer from '../common/template/footer'
 
 export default props => (
     <div className='wrapper'>
         <Header />
-        <Sidebar />
+        <SideBar />
         <div className='content-wrapper'> 
             {props.children}
         </div>
