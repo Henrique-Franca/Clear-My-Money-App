@@ -8,10 +8,7 @@ import Reducers from './main/reducers'
 
 const store = createStore(Reducers)
 ReactDOM.render(
-    <Provider store={store}>
-        <Routes />
-    </Provider>
-    
+    <Routes />
 , document.getElementById('app'))
 
 
