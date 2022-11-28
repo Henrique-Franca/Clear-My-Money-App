@@ -7,7 +7,7 @@ import SideBar from '../common/tamplate/sidebar';
 export default props=>(
     <div className="wrapper">
         <Header/>
-        <SideBar/>
+
     </div>
 )
 
