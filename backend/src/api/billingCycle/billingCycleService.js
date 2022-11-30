@@ -1,22 +1,22 @@
 const BillingCycle = require('./billingCycle')
 const errorHandler = require('../common/errorHandler')
 
-
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
 BillingCycle.updateOptions({new: true, runValidators: true})
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
+
 BillingCycle.route('get', (req, res, next) => {
 
-    BillingCycle.find({}, (error, docs) => {
+    BillingCycle.find({}, (err, docs) => {
 
-        if(!error) {
+        if(!err) {
 
             res.json(docs)
 
         } else {
 
-            res.status(500).json({errors: [error]})
+            res.status(500).json({errors: [err]})
 
         }
 
@@ -24,24 +24,24 @@ BillingCycle.route('get', (req, res, next) => {
 
 })
 
-BillingCycle.route('count', (req, res, next)=>{
-    BillingCycle.count((error, value) =>{
-        if(error){
+BillingCycle.route('count', (req, res, next) => {
+    BillingCycle.count((error, value) => {
+        if(error) {
             res.status(500).json({errors: [error]})
-        }else {
+        } else {
             res.json({value})
         }
     })
 })
 
 BillingCycle.route('summary', (req, res, next) => {
-    BillingCycle.aggregate([{
+    BillingCycle.aggregate({
         $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
     }, {
         $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}}
     }, {
         $project: {_id: 0, credit: 1, debt: 1}
-    }]).exec((error, result) => {
+    }, (error, result) => {
         if(error) {
             res.status(500).json({errors: [error]})
         } else {
@@ -50,4 +50,4 @@ BillingCycle.route('summary', (req, res, next) => {
     })
 })
 
-module.exports = BillingCycle  
+module.exports = BillingCycle
