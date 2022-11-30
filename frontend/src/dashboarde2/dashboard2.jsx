@@ -15,7 +15,7 @@ export default class Dashboard2 extends Component {
         this.state = { credit: 0, debt: 0 }
     }
 
-    componentWillUnmount() {
+    componentWillMount() {
         axios.get(`${BASE_URL}/billingCycles/summary`)
             .then(resp => this.setState(resp.data))
     }
